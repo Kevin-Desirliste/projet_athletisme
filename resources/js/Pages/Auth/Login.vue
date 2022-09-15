@@ -34,7 +34,7 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit">
-            <h1 class="text-center">Connexion</h1>
+            <h1 class="text-center font-bold">Connexion</h1>
             <div>
                 <InputLabel for="email" value="mail :" />
                 <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
@@ -55,7 +55,13 @@ const submit = () => {
 
             <div class="flex items-center justify-end mt-4">
                 <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    mot de passe oublié ?
+                    Vous n'avez pas de compte ? Inscrivez-vous
+                </Link>
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    Mot de passe oublié ?
                 </Link>
             </div>
         </form>
